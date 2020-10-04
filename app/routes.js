@@ -18,19 +18,20 @@ module.exports = function(app, passport, db) {
     app.get('/provider_login', function(req, res) {
         res.render('provider_login.ejs');
     });
+
     // PROFILE SECTION =========================
-    app.get('/patient_profile', isLoggedIn, function(req, res) {
-        db.collection('patientRecords').find({'userId': `${req.user._id}`}).toArray((err, result) => {
-          console.log(req.user);
-          if (err) return console.log(err)
-          res.render('patient_profile.ejs', {
-            user : req.user,
-            roulette: result
-          })
-        })
-    });
+    // app.get('/patient_profile', isLoggedIn, function(req, res) {
+    //     db.collection('patientRecords').find({'userId': `${req.user._id}`}).toArray((err, result) => {
+    //       console.log(req.user);
+    //       if (err) return console.log(err)
+    //       res.render('patient_profile.ejs', {
+    //         user : req.user,
+    //         roulette: result
+    //       })
+    //     })
+    // });
 
-
+//patient sign/login==============
     app.post('/submit_registration', passport.authenticate('local-signup', {
         successRedirect : '/patient_profile', // redirect to the secure profile section
         failureRedirect : '/patient_registration', // redirect back to the signup page if there is an error
@@ -43,8 +44,21 @@ module.exports = function(app, passport, db) {
         failureFlash : true // allow flash messages
     }));
 
+//provider login================
 
-    // PROFILE SECTION =========================
+app.post('/provider_login', function(req, res) {
+db.collection('providers').findOne({password: req.body.providerPassword, badge: req.body.badge},(err, result) => {
+  if (err) return console.log(err)
+  res.render('provider_profile.ejs', {
+    user : req.user,
+    roulette: result
+      })
+
+})
+
+})
+
+    // PATIENT PROFILE SECTION =========================
     app.get('/patient_profile', isLoggedIn, function(req, res) {
         db.collection('patientRecords').find({'userId': `${req.user._id}`}).toArray((err, result) => {
           console.log(req.user);
@@ -61,6 +75,13 @@ module.exports = function(app, passport, db) {
         req.logout();
         res.redirect('/');
     });
+
+
+
+
+
+
+
 
 // message board routes ===============================================================
 

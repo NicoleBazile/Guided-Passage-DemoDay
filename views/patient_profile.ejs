@@ -3,64 +3,44 @@
   <head>
     <meta charset="utf-8">
     <title>Guided Passage</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
   </head>
   <body>
+    <h1>Guided Passage</h1>
+    <h2>Patient Portal</h2>
 
-      <div class="d-flex" id="wrapper">
+    <p><a href="/logout">Logout</a></p>
 
-        <!-- Sidebar -->
-        <div class="bg-light border-right" id="sidebar-wrapper">
-          <div class="sidebar-heading">Start Bootstrap </div>
-          <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
-          </div>
-        </div>
-        <!-- /#sidebar-wrapper -->
+    <form class="" action="index.html" method="post">
 
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
+      <label for="">1. Body Temperature: </label>
+      <input type="text" name="question1" value="" required>
 
-          <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-            <button class="btn btn-primary" id="menu-toggle">Menu</button>
+      <!-- <label for="">1b. Food Intake: </label>
+        <select id="country" name="question2">
+          <option value="australia">All meals</option>
+          <option value="canada">Most meals</option>
+          <option value="usa">No appetite/No intake</option>
+        </select>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
+      <label for="">2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</label>
+      <input type="text" name="" value="" required>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            </div>
-          </nav>
+      <label for="">3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</label>
+      <input type="text" name="" value="" required>
 
-          <div class="container-fluid">
-            <h1 class="mt-4">Simple Sidebar</h1>
-            <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-            <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p>
-          </div>
-        </div>
-        <!-- /#page-content-wrapper -->
+      <label for="">4. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</label>
+      <input type="text" name="" value="" required>
 
-      </div>
-      <!-- /#wrapper -->
+      <label for="">5. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</label>
+      <input type="text" name="" value="" required>
 
-      <!-- Bootstrap core JavaScript -->
-      <script src="vendor/jquery/jquery.min.js"></script>
-      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <label for="">6. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</label>
+      <input type="text" name="" value="" required>
 
-      <!-- Menu Toggle Script -->
-      <script>
-        $("#menu-toggle").click(function(e) {
-          e.preventDefault();
-          $("#wrapper").toggleClass("toggled");
-        });
-      </script>
+      <button type="submit" name="button">Submit</button> -->
+
+    </form>
 
   </body>
 </html>
