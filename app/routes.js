@@ -71,7 +71,8 @@ db.collection('providers').findOne({password: req.body.providerPassword, badge: 
     });
 
     app.post('/patient_profile', function(req, res) {
-          db.collection('patientRecords').insertOne({question1: req.body.question1}),(err, result) => {
+          console.log(req.body);
+          db.collection('patientRecords').insertOne({question1: req.body.question1, question2: req.body.question2}),(err, result) => {
             if (err) return console.log(err)
             console.log(result, "This is result")
             res.render('patient_profile.ejs', {
